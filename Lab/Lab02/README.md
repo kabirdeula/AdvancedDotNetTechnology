@@ -1,4 +1,4 @@
-# Multithreading and Thread Synchronization Example
+# Lab 02 - Multithreading and Thread Synchronization
 
 ## Description
 This C# program demonstrates multithreading and thread synchronization using the `Monitor` class for synchronization. It creates two threads, each printing numbers from 1 to 5. Access to the shared method `PrintNumbers` is synchronized using a lock to ensure thread safety.

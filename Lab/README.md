@@ -1,6 +1,18 @@
 # Lab
 
-| S.N. | Topic                                                          | Date       | Status |
-| :--: | :------------------------------------------------------------- | :--------- | :----- |
-|  1.  | [Write a program to demonstrate Exception Handling](./Lab01/README.md#source-code)  | 2023/12/20 | Done   |
-|  2.  | [Write a program to demonstrate FileStream](./Lab02/README.md#source-code)          | 2023/12/20 | Done   |
+| S.N. | Topic                                                                                                                                                                                                              | Date       | Status |
+| :--: | :----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | :--------- | :----- |
+|  1.  | [Write a program in C# to print a number if it is prime; otherwise display the largest factor of that number.](./Lab01/README.md#source-code)                                                                      | 2023/12/28 | Done   |
+|  2.  | [Write a C# program to implement Multithreading and Thread Synchronization.](./Lab02/README.md#source-code)                                                                                                        | 2023/12/29 | Done   |
+|  3.  | [Create a Windows application in C# for registration form and fill the details and when you click the submit button it display the details in the message box.](./Lab03/README.md#source-code)                     | 2024/01/02 | Done   |
+|  4.  | [Create a Windows application in C# having two text boxes and three buttons named as factorial, prime, factorial series. When you click any button the resultant value will be displayed on the second textbox.]() | 2024/01/05 | Done   |
+|  5.  | [Write a program to demonstrate Exception Handling](./Lab05/README.md#source-code)                                                                                                                                 | 2024/01/08 | Done   |
+|  6.  | Implementation of Cookies in ASP.NET.                                                                                                                                                                              | 2024/01/11 |        |
+|  7.  | Implementation of Session in ASP.NET                                                                                                                                                                               | 2024/01/12 |        |
+|  8.  | Implementation of Dialog Box ASP.NET                                                                                                                                                                               | 2024/01/22 |        |
+|  9.  | Create an ADO.NET applications in C# to demonstrate the Data Reader, Data Set, Data Adapter and Data View Objects.                                                                                                 | 2024/01/23 |        |
+| 10.  | Implementation of different ASP controls.                                                                                                                                                                          | 2024/01/25 |        |
+| 11.  | Design an ASP.NET Webpage to demonstrate the Label, Button and Textbox controls.                                                                                                                                   | 2024/01/26 |        |
+| 12.  | Design an ASP.NET Webpage to work with Dropdown list and List Box controls.                                                                                                                                        | 2024/01/29 |        |
+| 13.  | Develop a Registration Form with all Validation Controls.                                                                                                                                                          | 2024/01/30 |        |
+| 14.  | Display Tribhuvan University 10 times in page using Razor syntax.                                                                                                                                                  | 2024/02/01 |        |

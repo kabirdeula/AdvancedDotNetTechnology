@@ -1,4 +1,4 @@
-# Lab 01
+# Lab 01 - Check Prime else Display Largest Factor
 
 ## Description
 This C# program allows users to input a number and then checks whether the number is prime or not. If the number is prime, it displays a message indicating that. Otherwise, it finds and displays the largest factor of the input number.
