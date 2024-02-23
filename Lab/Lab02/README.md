@@ -1,78 +1,63 @@
-# Lab 02 - FileStream Implementation
+# Multithreading and Thread Synchronization Example
 
 ## Description
-This C# program demonstrates basic file input and output operations using the FileStream class. It writes a string to a file and then reads the content back from the file. The file is created or opened as needed.
+This C# program demonstrates multithreading and thread synchronization using the `Monitor` class for synchronization. It creates two threads, each printing numbers from 1 to 5. Access to the shared method `PrintNumbers` is synchronized using a lock to ensure thread safety.
 
 ## Instructions
 1. Run the program.
-2. The program will create or open a file named "example.txt" in the current working directory.
-3. It writes the string "Hello, World!" to the file using FileStream.
-4. It then reads the content from the file using FileStream and displays it on the console.
+2. Two threads, "Thread 1" and "Thread 2", will be started.
+3. Each thread will print numbers from 1 to 5, with their respective thread names prefixed to each number.
 
 ## Usage
 ```bash
 dotnet run
 ```
 
-## File Path
-The file path is set to "example.txt" by default. You can modify the `filePath` variable to specify a different file path or name.
-
-```csharp
-string filePath = "example.txt";
-```
-
-## File Writing
-The program uses FileStream to write content to the file.
-
-```csharp
-FileStream fsWrite = new FileStream(filePath, FileMode.OpenOrCreate);
-string contentToWrite = "Hello, World!";
-byte[] bytesToWrite = System.Text.Encoding.UTF8.GetBytes(contentToWrite);
-fsWrite.Write(bytesToWrite, 0, bytesToWrite.Length);
-fsWrite.Close();
-```
-
-## File Reading
-The program uses FileStream to read content from the file.
-
-```csharp
-FileStream fsRead = new FileStream(filePath, FileMode.Open);
-byte[] bytesToRead = new byte[1024];
-int bytesRead = fsRead.Read(bytesToRead, 0, bytesToRead.Length);
-string contentToRead = System.Text.Encoding.UTF8.GetString(bytesToRead, 0, bytesRead);
-Console.WriteLine("Content Read from File: " + contentToRead);
-fsRead.Close();
-```
-
 ## Source Code
 ```csharp
+using System;
+using System.Threading;
+
 class Program
 {
-    public static void Main(string[] args)
+    static object lockObject = new object();
+
+    static void Main(string[] args)
     {
-        string filePath = "example.txt";
+        Thread thread1 = new Thread(PrintNumbers);
+        Thread thread2 = new Thread(PrintNumbers);
 
-        // Writing to a file using FileStream
-        FileStream fsWrite = new FileStream(filePath, FileMode.OpenOrCreate);
-        string contentToWrite = "Hello, World!";
-        byte[] bytesToWrite = System.Text.Encoding.UTF8.GetBytes(contentToWrite);
-        fsWrite.Write(bytesToWrite, 0, bytesToWrite.Length);
-        fsWrite.Close();
+        thread1.Start("Thread 1");
+        thread2.Start("Thread 2");
+    }
 
-        // Reading from a file using FileStream
-        FileStream fsRead = new FileStream(filePath, FileMode.Open);
-        byte[] bytesToRead = new byte[1024];
-        int bytesRead = fsRead.Read(bytesToRead, 0, bytesToRead.Length);
-        string contentToRead = System.Text.Encoding.UTF8.GetString(bytesToRead, 0, bytesRead);
-        Console.WriteLine("Content Read from File: " + contentToRead);
-        fsRead.Close();
+    static void PrintNumbers(object threadName)
+    {
+        lock (lockObject)
+        {
+            for(int i = 1; i <= 5; i++)
+            {
+                Console.WriteLine($"{threadName}: {i}");
+
+                Thread.Sleep(100);
+            }
+        }
     }
 }
 ```
 
-## Example
+## Example Output
 ```bash
-Content Read from File: Hello, World!
+Thread 1: 1
+Thread 1: 2
+Thread 1: 3
+Thread 1: 4
+Thread 1: 5
+Thread 2: 1
+Thread 2: 2
+Thread 2: 3
+Thread 2: 4
+Thread 2: 5
 ```
 
-Feel free to modify the program to suit your specific file I/O needs.
+Each thread prints its name followed by numbers from 1 to 5. Access to the `PrintNumbers` method is synchronized using a lock, ensuring that only one thread executes the method at a time, preventing interleaved output.

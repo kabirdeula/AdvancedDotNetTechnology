@@ -1,22 +1,26 @@
 ﻿class Program
 {
-    public static void Main(string[] args)
+    static object lockObject = new object();
+
+    static void Main(string[] args)
     {
-        string filePath = "example.txt";
+        Thread thread1 = new Thread(PrintNumbers!);
+        Thread thread2 = new Thread(PrintNumbers!);
 
-        // Writing to a file using FileStream
-        FileStream fsWrite = new FileStream(filePath, FileMode.OpenOrCreate);
-        string contentToWrite = "Hello, World!";
-        byte[] bytesToWrite = System.Text.Encoding.UTF8.GetBytes(contentToWrite);
-        fsWrite.Write(bytesToWrite, 0, bytesToWrite.Length);
-        fsWrite.Close();
+        thread1.Start("Thread 1");
+        thread2.Start("Thread 2");
+    }
 
-        // Reading from a file using FileStream
-        FileStream fsRead = new FileStream(filePath, FileMode.Open);
-        byte[] bytesToRead = new byte[1024];
-        int bytesRead = fsRead.Read(bytesToRead, 0, bytesToRead.Length);
-        string contentToRead = System.Text.Encoding.UTF8.GetString(bytesToRead, 0, bytesRead);
-        Console.WriteLine("Content Read from File: " + contentToRead);
-        fsRead.Close();
+    static void PrintNumbers(object threadName)
+    {
+        lock (lockObject)
+        {
+            for(int i = 1; i <= 5; i++)
+            {
+                Console.WriteLine($"{threadName}: {i}");
+
+                Thread.Sleep(100);
+            }
+        }
     }
 }
