@@ -14,7 +14,7 @@ Simply open the Razor Page in a web browser to view the generated list.
 - Dynamic Content: Utilizes a loop to generate the list dynamically.
 - Razor Syntax: Employs Razor syntax to embed C# code within HTML markup.
 
-## Razor Page Code
+## Source Code
 ```html
 @page
 @model IndexModel
