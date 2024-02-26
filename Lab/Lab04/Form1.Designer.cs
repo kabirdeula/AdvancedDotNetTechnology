@@ -68,7 +68,7 @@
             this.button3.Name = "button3";
             this.button3.Size = new System.Drawing.Size(430, 40);
             this.button3.TabIndex = 3;
-            this.button3.Text = "Factorial Series";
+            this.button3.Text = "Fibonacci Series";
             this.button3.UseVisualStyleBackColor = true;
             this.button3.Click += new System.EventHandler(this.button3_Click);
             // 
@@ -90,7 +90,7 @@
             this.Controls.Add(this.button1);
             this.Controls.Add(this.textBox1);
             this.Name = "Form1";
-            this.Text = "Form1";
+            this.Text = "Calculator";
             this.ResumeLayout(false);
             this.PerformLayout();
 

@@ -91,5 +91,6 @@ namespace Lab03
 
 ## Example
 ![Registration Form](registration_form.png)
+![Message Box](message_box.png)
 
 Fill in the required information and click "Register" to see the entered details displayed in a message box.

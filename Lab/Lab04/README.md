@@ -75,11 +75,11 @@ namespace Lab04
         {
             int prev = 0, cur = 1, next;
             int num = int.Parse(textBox1.Text);
-            textBox2.Text = prev.ToString() +cur.ToString();
+            textBox2.Text = prev.ToString() + ", " + cur.ToString() + ", ";
             next = prev + cur;
             while (next <= num)
             {
-                textBox2.Text += next.ToString();
+                textBox2.Text += next.ToString() + ", ";
                 prev = cur;
                 cur = next;
                 next = prev + cur;
@@ -90,6 +90,8 @@ namespace Lab04
 ```
 
 ## Example
-![Mathematical Operations GUI](math_operations_gui.png)
+![Factorial](factorial.png)
+![Prime Series](prime.png)
+![Fibonacci Series](fibonacci.png)
 
 Enter a number and click on one of the buttons to perform the corresponding mathematical operation. The result will be displayed in the adjacent text box.

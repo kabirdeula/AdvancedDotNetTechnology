@@ -54,11 +54,11 @@ namespace Lab04
         {
             int prev = 0, cur = 1, next;
             int num = int.Parse(textBox1.Text);
-            textBox2.Text = prev.ToString() +cur.ToString();
+            textBox2.Text = prev.ToString() + ", " + cur.ToString() + ", ";
             next = prev + cur;
             while (next <= num)
             {
-                textBox2.Text += next.ToString();
+                textBox2.Text += next.ToString() + ", ";
                 prev = cur;
                 cur = next;
                 next = prev + cur;

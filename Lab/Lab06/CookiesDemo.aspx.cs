@@ -19,38 +19,38 @@ namespace Lab06
             Label2.Text = "";
             if (naruto.Checked)
             {
-                Response.Cookies["anime"]["naruto"] = "naruto";
+                Response.Cookies["anime"]["naruto"] = "Naruto";
             }
-            if(one_piece.Checked)
+            if (one_piece.Checked)
             {
-                Response.Cookies["anime"]["one_piece"] = "one_piece";
+                Response.Cookies["anime"]["one_piece"] = "One Piece";
             }
             if (bleach.Checked)
             {
-                Response.Cookies["anime"]["bleach"] = "bleach";
+                Response.Cookies["anime"]["bleach"] = "Bleach";
             }
             if (dragonball.Checked)
             {
-                Response.Cookies["anime"]["dragonball"] = "dragonball";
+                Response.Cookies["anime"]["dragonball"] = "Dragonball";
             }
 
             if (Request.Cookies["anime"].Values.ToString() != null)
             {
                 if (Request.Cookies["anime"]["naruto"] != null)
                 {
-                    Label2.Text += Request.Cookies["anime"]["naruto"] + " ";
+                    Label2.Text += Request.Cookies["anime"]["naruto"] + ", ";
                 }
-                if(Request.Cookies["anime"]["one_piece"] != null)
+                if (Request.Cookies["anime"]["one_piece"] != null)
                 {
-                    Label2.Text += Request.Cookies["anime"]["one_piece"] + " ";
+                    Label2.Text += Request.Cookies["anime"]["one_piece"] + ", ";
                 }
                 if (Request.Cookies["anime"]["bleach"] != null)
                 {
-                    Label2.Text += Request.Cookies["anime"]["bleach"] + " ";
+                    Label2.Text += Request.Cookies["anime"]["bleach"] + ", ";
                 }
                 if (Request.Cookies["anime"]["dragonball"] != null)
                 {
-                    Label2.Text += Request.Cookies["anime"]["dragonball"] + " ";
+                    Label2.Text += Request.Cookies["anime"]["dragonball"] + ", ";
                 }
             }
             else
